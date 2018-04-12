@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+/*
+$.ajax({
+    type: "POST",
+    url: "http://simpleapi.info/apps/numbers-info/info.php?results=json",
+    data: {
+        "number": '597724707',
+    }})
+*/ 
+
+$(document).ready(function(){
+    $("button").click(function(){
+        var txt = $("input").val();
+        $.post("http://simpleapi.info/apps/numbers-info/info.php?results=json", {"number": txt}, "text");
+    });
+});
+</script>
+    
+</head>
+<body>
+        <p>Start typing a mobile number in the input field below:</p>
+        Mobile number:
+        
+        <input type="text">
+        
+        <button>Get the Owner name</button>
+        
+</body>
+</html>
