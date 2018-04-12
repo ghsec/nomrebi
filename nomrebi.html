@@ -16,7 +16,7 @@ $.ajax({
 $(document).ready(function(){
     $("button").click(function(){
         var txt = $("input").val();
-        $.post("http://simpleapi.info/apps/numbers-info/info.php?results=json", {"number": txt}, "text");
+        $.post("http://simpleapi.info/apps/numbers-info/info.php?results=json", {"number": text}, function(data){var temp = JSON.parse(data); alert(temp.items)});
     });
 });
 </script>
